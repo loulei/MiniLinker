@@ -1,0 +1,410 @@
+start parse elf file/libhooktest.so
+type=3
+machine=40
+entry=0x00000000
+phoff=0x00000034
+phnum=8
+phentsize=32
+shoff=0x000051dc
+shnum=27
+shentsize=40
+ehsize=52
+shstrndx=26
+-------------------- parse section -------------------
+1. find strtab
+section string table: name index=1, type=0x00000003, flag=0x00000000, addr=0x00000000, offset=0x000050c3, size=279, align=1
+2. find dynstr
+section 5: name=.dynstr, type=0x00000003, flag=0x00000002, addr=0x00000860, offset=0x00000860, size=1682, align=1
+3. parse symble section
+section 4: name=.dynsym, type=0x0000000b, flag=0x00000002, addr=0x000001f0, offset=0x000001f0, size=1648, align=4
+	sym num=103
+	symble 2: name=__cxa_finalize, type=2, shndx=0, value(offset from section)=0x00000000
+	symble 3: name=__cxa_atexit, type=2, shndx=0, value(offset from section)=0x00000000
+	symble 4: name=registerInlineHook, type=2, shndx=12, shname=.text, value(offset from section)=0x00001969
+	symble 5: name=malloc, type=2, shndx=0, value(offset from section)=0x00000000
+	symble 6: name=__aeabi_memcpy, type=2, shndx=0, value(offset from section)=0x00000000
+	symble 7: name=mmap, type=2, shndx=0, value(offset from section)=0x00000000
+	symble 8: name=relocateInstruction, type=2, shndx=12, shname=.text, value(offset from section)=0x00002071
+	symble 9: name=__aeabi_unwind_cpp_pr0, type=2, shndx=12, shname=.text, value(offset from section)=0x00003868
+	symble 10: name=fopen, type=2, shndx=0, value(offset from section)=0x00000000
+	symble 11: name=fgets, type=2, shndx=0, value(offset from section)=0x00000000
+	symble 12: name=strstr, type=2, shndx=0, value(offset from section)=0x00000000
+	symble 13: name=strtok, type=2, shndx=0, value(offset from section)=0x00000000
+	symble 14: name=strtoul, type=2, shndx=0, value(offset from section)=0x00000000
+	symble 15: name=fclose, type=2, shndx=0, value(offset from section)=0x00000000
+	symble 16: name=__stack_chk_fail, type=2, shndx=0, value(offset from section)=0x00000000
+	symble 17: name=__stack_chk_guard, type=1, shndx=0, value(offset from section)=0x00000000
+	symble 18: name=inlineUnHook, type=2, shndx=12, shname=.text, value(offset from section)=0x00001b69
+	symble 19: name=getpid, type=2, shndx=0, value(offset from section)=0x00000000
+	symble 20: name=snprintf, type=2, shndx=0, value(offset from section)=0x00000000
+	symble 21: name=opendir, type=2, shndx=0, value(offset from section)=0x00000000
+	symble 22: name=readdir, type=2, shndx=0, value(offset from section)=0x00000000
+	symble 23: name=atoi, type=2, shndx=0, value(offset from section)=0x00000000
+	symble 24: name=closedir, type=2, shndx=0, value(offset from section)=0x00000000
+	symble 25: name=fork, type=2, shndx=0, value(offset from section)=0x00000000
+	symble 26: name=waitpid, type=2, shndx=0, value(offset from section)=0x00000000
+	symble 27: name=ptrace, type=2, shndx=0, value(offset from section)=0x00000000
+	symble 28: name=raise, type=2, shndx=0, value(offset from section)=0x00000000
+	symble 29: name=mprotect, type=2, shndx=0, value(offset from section)=0x00000000
+	symble 30: name=munmap, type=2, shndx=0, value(offset from section)=0x00000000
+	symble 31: name=free, type=2, shndx=0, value(offset from section)=0x00000000
+	symble 32: name=__aeabi_memcpy4, type=2, shndx=0, value(offset from section)=0x00000000
+	symble 33: name=cacheflush, type=2, shndx=0, value(offset from section)=0x00000000
+	symble 34: name=kill, type=2, shndx=0, value(offset from section)=0x00000000
+	symble 35: name=wait, type=2, shndx=0, value(offset from section)=0x00000000
+	symble 36: name=inlineUnHookAll, type=2, shndx=12, shname=.text, value(offset from section)=0x00001e35
+	symble 37: name=inlineHook, type=2, shndx=12, shname=.text, value(offset from section)=0x00001e95
+	symble 38: name=inlineHookAll, type=2, shndx=12, shname=.text, value(offset from section)=0x00001fa1
+	symble 39: name=native_hello, type=2, shndx=12, shname=.text, value(offset from section)=0x0000296d
+	symble 40: name=__android_log_print, type=2, shndx=0, value(offset from section)=0x00000000
+	symble 41: name=__aeabi_unwind_cpp_pr1, type=2, shndx=12, shname=.text, value(offset from section)=0x00003870
+	symble 42: name=native_hookread, type=2, shndx=12, shname=.text, value(offset from section)=0x000029bd
+	symble 43: name=hook_read, type=2, shndx=12, shname=.text, value(offset from section)=0x00002c09
+	symble 44: name=native_unhookread, type=2, shndx=12, shname=.text, value(offset from section)=0x000029f9
+	symble 45: name=read, type=2, shndx=0, value(offset from section)=0x00000000
+	symble 46: name=find_dvm, type=2, shndx=12, shname=.text, value(offset from section)=0x00002a49
+	symble 47: name=new_fread, type=2, shndx=12, shname=.text, value(offset from section)=0x00002a71
+	symble 48: name=__aeabi_memclr, type=2, shndx=0, value(offset from section)=0x00000000
+	symble 49: name=fileno, type=2, shndx=0, value(offset from section)=0x00000000
+	symble 50: name=old_fread, type=1, shndx=22, shname=.bss, value(offset from section)=0x0002700c
+	symble 51: name=new_read, type=2, shndx=12, shname=.text, value(offset from section)=0x00002b41
+	symble 52: name=old_read, type=1, shndx=22, shname=.bss, value(offset from section)=0x00027008
+	symble 53: name=unHook_read, type=2, shndx=12, shname=.text, value(offset from section)=0x00002c55
+	symble 54: name=JNI_OnLoad, type=2, shndx=12, shname=.text, value(offset from section)=0x00002c75
+	symble 55: name=_edata, type=0, shndx=65521, value(offset from section)=0x00006004
+	symble 56: name=_end, type=0, shndx=65521, value(offset from section)=0x00027010
+	symble 57: name=__bss_start, type=0, shndx=65521, value(offset from section)=0x00006004
+	symble 58: name=abort, type=2, shndx=0, value(offset from section)=0x00000000
+	symble 59: name=memcpy, type=2, shndx=0, value(offset from section)=0x00000000
+	symble 60: name=__gnu_Unwind_Find_exidx, type=2, shndx=0, value(offset from section)=0x00000000
+	symble 61: name=__aeabi_unwind_cpp_pr2, type=2, shndx=12, shname=.text, value(offset from section)=0x00003878
+	symble 62: name=__gnu_Unwind_Restore_VFP_D, type=2, shndx=12, shname=.text, value(offset from section)=0x00003c10
+	symble 63: name=__gnu_Unwind_Restore_VFP, type=2, shndx=12, shname=.text, value(offset from section)=0x00003c00
+	symble 64: name=__gnu_Unwind_Restore_VFP_D_16_to_31, type=2, shndx=12, shname=.text, value(offset from section)=0x00003c20
+	symble 65: name=__gnu_Unwind_Restore_WMMXD, type=2, shndx=12, shname=.text, value(offset from section)=0x00003c30
+	symble 66: name=__gnu_Unwind_Restore_WMMXC, type=2, shndx=12, shname=.text, value(offset from section)=0x00003cb8
+	symble 67: name=restore_core_regs, type=2, shndx=12, shname=.text, value(offset from section)=0x00003bec
+	symble 68: name=_Unwind_GetCFA, type=2, shndx=12, shname=.text, value(offset from section)=0x0000312c
+	symble 69: name=__gnu_Unwind_RaiseException, type=2, shndx=12, shname=.text, value(offset from section)=0x00003134
+	symble 70: name=__gnu_Unwind_ForcedUnwind, type=2, shndx=12, shname=.text, value(offset from section)=0x000031d8
+	symble 71: name=__gnu_Unwind_Resume, type=2, shndx=12, shname=.text, value(offset from section)=0x000031f4
+	symble 72: name=__gnu_Unwind_Resume_or_Rethrow, type=2, shndx=12, shname=.text, value(offset from section)=0x00003268
+	symble 73: name=_Unwind_Complete, type=2, shndx=12, shname=.text, value(offset from section)=0x00003288
+	symble 74: name=_Unwind_DeleteException, type=2, shndx=12, shname=.text, value(offset from section)=0x0000328c
+	symble 75: name=_Unwind_VRS_Get, type=2, shndx=12, shname=.text, value(offset from section)=0x000032a4
+	symble 76: name=_Unwind_VRS_Set, type=2, shndx=12, shname=.text, value(offset from section)=0x00003328
+	symble 77: name=__gnu_Unwind_Backtrace, type=2, shndx=12, shname=.text, value(offset from section)=0x000033b0
+	symble 78: name=__cxa_begin_cleanup, type=0, shndx=0, value(offset from section)=0x00000000
+	symble 79: name=__cxa_type_match, type=0, shndx=0, value(offset from section)=0x00000000
+	symble 80: name=__gnu_unwind_execute, type=2, shndx=12, shname=.text, value(offset from section)=0x00003e20
+	symble 81: name=__cxa_call_unexpected, type=0, shndx=0, value(offset from section)=0x00000000
+	symble 82: name=_Unwind_VRS_Pop, type=2, shndx=12, shname=.text, value(offset from section)=0x00003880
+	symble 83: name=__gnu_Unwind_Save_VFP_D, type=2, shndx=12, shname=.text, value(offset from section)=0x00003c18
+	symble 84: name=__gnu_Unwind_Save_VFP, type=2, shndx=12, shname=.text, value(offset from section)=0x00003c08
+	symble 85: name=__gnu_Unwind_Save_VFP_D_16_to_31, type=2, shndx=12, shname=.text, value(offset from section)=0x00003c28
+	symble 86: name=__gnu_Unwind_Save_WMMXD, type=2, shndx=12, shname=.text, value(offset from section)=0x00003c74
+	symble 87: name=__gnu_Unwind_Save_WMMXC, type=2, shndx=12, shname=.text, value(offset from section)=0x00003ccc
+	symble 88: name=__restore_core_regs, type=2, shndx=12, shname=.text, value(offset from section)=0x00003bec
+	symble 89: name=___Unwind_RaiseException, type=2, shndx=12, shname=.text, value(offset from section)=0x00003ce0
+	symble 90: name=_Unwind_RaiseException, type=2, shndx=12, shname=.text, value(offset from section)=0x00003ce0
+	symble 91: name=___Unwind_Resume, type=2, shndx=12, shname=.text, value(offset from section)=0x00003d04
+	symble 92: name=_Unwind_Resume, type=2, shndx=12, shname=.text, value(offset from section)=0x00003d04
+	symble 93: name=___Unwind_Resume_or_Rethrow, type=2, shndx=12, shname=.text, value(offset from section)=0x00003d28
+	symble 94: name=_Unwind_Resume_or_Rethrow, type=2, shndx=12, shname=.text, value(offset from section)=0x00003d28
+	symble 95: name=___Unwind_ForcedUnwind, type=2, shndx=12, shname=.text, value(offset from section)=0x00003d4c
+	symble 96: name=_Unwind_ForcedUnwind, type=2, shndx=12, shname=.text, value(offset from section)=0x00003d4c
+	symble 97: name=___Unwind_Backtrace, type=2, shndx=12, shname=.text, value(offset from section)=0x00003d70
+	symble 98: name=_Unwind_Backtrace, type=2, shndx=12, shname=.text, value(offset from section)=0x00003d70
+	symble 99: name=__gnu_unwind_frame, type=2, shndx=12, shname=.text, value(offset from section)=0x000041a8
+	symble 100: name=_Unwind_GetRegionStart, type=2, shndx=12, shname=.text, value(offset from section)=0x000041e8
+	symble 101: name=_Unwind_GetLanguageSpecificData, type=2, shndx=12, shname=.text, value(offset from section)=0x000041f8
+	symble 102: name=_Unwind_GetDataRelBase, type=2, shndx=12, shname=.text, value(offset from section)=0x00004214
+	symble 103: name=_Unwind_GetTextRelBase, type=2, shndx=12, shname=.text, value(offset from section)=0x0000421c
+4. find hash section
+section 6: name=.hash, type=0x00000005, flag=0x00000002, addr=0x00000ef4, offset=0x00000ef4, size=808, align=4
+nbucket=97, nchain=103
+test symble
+find 1 symble from hash section, symname=, result=
+find 2 symble from hash section, symname=__cxa_finalize, result=__cxa_finalize
+find 2 symble from hash section, symname=__cxa_finalize, result=__cxa_finalize
+find 3 symble from hash section, symname=__cxa_atexit, result=__cxa_atexit
+find 4 symble from hash section, symname=registerInlineHook, result=registerInlineHook
+find 5 symble from hash section, symname=malloc, result=malloc
+find 6 symble from hash section, symname=__aeabi_memcpy, result=__aeabi_memcpy
+find 7 symble from hash section, symname=mmap, result=mmap
+find 7 symble from hash section, symname=mmap, result=mmap
+find 8 symble from hash section, symname=relocateInstruction, result=relocateInstruction
+find 9 symble from hash section, symname=__aeabi_unwind_cpp_pr0, result=__aeabi_unwind_cpp_pr0
+find 9 symble from hash section, symname=__aeabi_unwind_cpp_pr0, result=__aeabi_unwind_cpp_pr0
+find 10 symble from hash section, symname=fopen, result=fopen
+find 10 symble from hash section, symname=fopen, result=fopen
+find 10 symble from hash section, symname=fopen, result=fopen
+find 10 symble from hash section, symname=fopen, result=fopen
+find 11 symble from hash section, symname=fgets, result=fgets
+find 11 symble from hash section, symname=fgets, result=fgets
+find 11 symble from hash section, symname=fgets, result=fgets
+find 11 symble from hash section, symname=fgets, result=fgets
+find 12 symble from hash section, symname=strstr, result=strstr
+find 12 symble from hash section, symname=strstr, result=strstr
+find 13 symble from hash section, symname=strtok, result=strtok
+find 13 symble from hash section, symname=strtok, result=strtok
+find 13 symble from hash section, symname=strtok, result=strtok
+find 13 symble from hash section, symname=strtok, result=strtok
+find 14 symble from hash section, symname=strtoul, result=strtoul
+find 15 symble from hash section, symname=fclose, result=fclose
+find 16 symble from hash section, symname=__stack_chk_fail, result=__stack_chk_fail
+find 16 symble from hash section, symname=__stack_chk_fail, result=__stack_chk_fail
+find 16 symble from hash section, symname=__stack_chk_fail, result=__stack_chk_fail
+find 17 symble from hash section, symname=__stack_chk_guard, result=__stack_chk_guard
+find 17 symble from hash section, symname=__stack_chk_guard, result=__stack_chk_guard
+find 17 symble from hash section, symname=__stack_chk_guard, result=__stack_chk_guard
+find 17 symble from hash section, symname=__stack_chk_guard, result=__stack_chk_guard
+find 17 symble from hash section, symname=__stack_chk_guard, result=__stack_chk_guard
+find 18 symble from hash section, symname=inlineUnHook, result=inlineUnHook
+find 18 symble from hash section, symname=inlineUnHook, result=inlineUnHook
+find 19 symble from hash section, symname=getpid, result=getpid
+find 20 symble from hash section, symname=snprintf, result=snprintf
+find 20 symble from hash section, symname=snprintf, result=snprintf
+find 20 symble from hash section, symname=snprintf, result=snprintf
+find 20 symble from hash section, symname=snprintf, result=snprintf
+find 21 symble from hash section, symname=opendir, result=opendir
+find 22 symble from hash section, symname=readdir, result=readdir
+find 22 symble from hash section, symname=readdir, result=readdir
+find 22 symble from hash section, symname=readdir, result=readdir
+find 22 symble from hash section, symname=readdir, result=readdir
+find 23 symble from hash section, symname=atoi, result=atoi
+find 23 symble from hash section, symname=atoi, result=atoi
+find 24 symble from hash section, symname=closedir, result=closedir
+find 24 symble from hash section, symname=closedir, result=closedir
+find 24 symble from hash section, symname=closedir, result=closedir
+find 24 symble from hash section, symname=closedir, result=closedir
+find 25 symble from hash section, symname=fork, result=fork
+find 26 symble from hash section, symname=waitpid, result=waitpid
+find 27 symble from hash section, symname=ptrace, result=ptrace
+find 27 symble from hash section, symname=ptrace, result=ptrace
+find 28 symble from hash section, symname=raise, result=raise
+find 28 symble from hash section, symname=raise, result=raise
+find 29 symble from hash section, symname=mprotect, result=mprotect
+find 29 symble from hash section, symname=mprotect, result=mprotect
+find 30 symble from hash section, symname=munmap, result=munmap
+find 31 symble from hash section, symname=free, result=free
+find 31 symble from hash section, symname=free, result=free
+find 31 symble from hash section, symname=free, result=free
+find 31 symble from hash section, symname=free, result=free
+find 32 symble from hash section, symname=__aeabi_memcpy4, result=__aeabi_memcpy4
+find 33 symble from hash section, symname=cacheflush, result=cacheflush
+find 33 symble from hash section, symname=cacheflush, result=cacheflush
+find 34 symble from hash section, symname=kill, result=kill
+find 35 symble from hash section, symname=wait, result=wait
+find 36 symble from hash section, symname=inlineUnHookAll, result=inlineUnHookAll
+find 37 symble from hash section, symname=inlineHook, result=inlineHook
+find 37 symble from hash section, symname=inlineHook, result=inlineHook
+find 38 symble from hash section, symname=inlineHookAll, result=inlineHookAll
+find 38 symble from hash section, symname=inlineHookAll, result=inlineHookAll
+find 39 symble from hash section, symname=native_hello, result=native_hello
+find 39 symble from hash section, symname=native_hello, result=native_hello
+find 40 symble from hash section, symname=__android_log_print, result=__android_log_print
+find 41 symble from hash section, symname=__aeabi_unwind_cpp_pr1, result=__aeabi_unwind_cpp_pr1
+find 42 symble from hash section, symname=native_hookread, result=native_hookread
+find 42 symble from hash section, symname=native_hookread, result=native_hookread
+find 43 symble from hash section, symname=hook_read, result=hook_read
+find 43 symble from hash section, symname=hook_read, result=hook_read
+find 43 symble from hash section, symname=hook_read, result=hook_read
+find 44 symble from hash section, symname=native_unhookread, result=native_unhookread
+find 44 symble from hash section, symname=native_unhookread, result=native_unhookread
+find 44 symble from hash section, symname=native_unhookread, result=native_unhookread
+find 44 symble from hash section, symname=native_unhookread, result=native_unhookread
+find 44 symble from hash section, symname=native_unhookread, result=native_unhookread
+find 45 symble from hash section, symname=read, result=read
+find 46 symble from hash section, symname=find_dvm, result=find_dvm
+find 46 symble from hash section, symname=find_dvm, result=find_dvm
+find 46 symble from hash section, symname=find_dvm, result=find_dvm
+find 46 symble from hash section, symname=find_dvm, result=find_dvm
+find 46 symble from hash section, symname=find_dvm, result=find_dvm
+find 47 symble from hash section, symname=new_fread, result=new_fread
+find 47 symble from hash section, symname=new_fread, result=new_fread
+find 48 symble from hash section, symname=__aeabi_memclr, result=__aeabi_memclr
+find 48 symble from hash section, symname=__aeabi_memclr, result=__aeabi_memclr
+find 48 symble from hash section, symname=__aeabi_memclr, result=__aeabi_memclr
+find 48 symble from hash section, symname=__aeabi_memclr, result=__aeabi_memclr
+find 49 symble from hash section, symname=fileno, result=fileno
+find 50 symble from hash section, symname=old_fread, result=old_fread
+find 50 symble from hash section, symname=old_fread, result=old_fread
+find 51 symble from hash section, symname=new_read, result=new_read
+find 51 symble from hash section, symname=new_read, result=new_read
+find 51 symble from hash section, symname=new_read, result=new_read
+find 51 symble from hash section, symname=new_read, result=new_read
+find 52 symble from hash section, symname=old_read, result=old_read
+find 53 symble from hash section, symname=unHook_read, result=unHook_read
+find 54 symble from hash section, symname=JNI_OnLoad, result=JNI_OnLoad
+find 54 symble from hash section, symname=JNI_OnLoad, result=JNI_OnLoad
+find 55 symble from hash section, symname=_edata, result=_edata
+find 56 symble from hash section, symname=_end, result=_end
+find 56 symble from hash section, symname=_end, result=_end
+find 56 symble from hash section, symname=_end, result=_end
+find 56 symble from hash section, symname=_end, result=_end
+find 56 symble from hash section, symname=_end, result=_end
+find 57 symble from hash section, symname=__bss_start, result=__bss_start
+find 57 symble from hash section, symname=__bss_start, result=__bss_start
+find 58 symble from hash section, symname=abort, result=abort
+find 59 symble from hash section, symname=memcpy, result=memcpy
+find 60 symble from hash section, symname=__gnu_Unwind_Find_exidx, result=__gnu_Unwind_Find_exidx
+find 60 symble from hash section, symname=__gnu_Unwind_Find_exidx, result=__gnu_Unwind_Find_exidx
+find 61 symble from hash section, symname=__aeabi_unwind_cpp_pr2, result=__aeabi_unwind_cpp_pr2
+find 61 symble from hash section, symname=__aeabi_unwind_cpp_pr2, result=__aeabi_unwind_cpp_pr2
+find 62 symble from hash section, symname=__gnu_Unwind_Restore_VFP_D, result=__gnu_Unwind_Restore_VFP_D
+find 62 symble from hash section, symname=__gnu_Unwind_Restore_VFP_D, result=__gnu_Unwind_Restore_VFP_D
+find 63 symble from hash section, symname=__gnu_Unwind_Restore_VFP, result=__gnu_Unwind_Restore_VFP
+find 64 symble from hash section, symname=__gnu_Unwind_Restore_VFP_D_16_to_31, result=__gnu_Unwind_Restore_VFP_D_16_to_31
+find 64 symble from hash section, symname=__gnu_Unwind_Restore_VFP_D_16_to_31, result=__gnu_Unwind_Restore_VFP_D_16_to_31
+find 64 symble from hash section, symname=__gnu_Unwind_Restore_VFP_D_16_to_31, result=__gnu_Unwind_Restore_VFP_D_16_to_31
+find 64 symble from hash section, symname=__gnu_Unwind_Restore_VFP_D_16_to_31, result=__gnu_Unwind_Restore_VFP_D_16_to_31
+find 65 symble from hash section, symname=__gnu_Unwind_Restore_WMMXD, result=__gnu_Unwind_Restore_WMMXD
+find 65 symble from hash section, symname=__gnu_Unwind_Restore_WMMXD, result=__gnu_Unwind_Restore_WMMXD
+find 65 symble from hash section, symname=__gnu_Unwind_Restore_WMMXD, result=__gnu_Unwind_Restore_WMMXD
+find 66 symble from hash section, symname=__gnu_Unwind_Restore_WMMXC, result=__gnu_Unwind_Restore_WMMXC
+find 67 symble from hash section, symname=restore_core_regs, result=restore_core_regs
+find 67 symble from hash section, symname=restore_core_regs, result=restore_core_regs
+find 67 symble from hash section, symname=restore_core_regs, result=restore_core_regs
+find 68 symble from hash section, symname=_Unwind_GetCFA, result=_Unwind_GetCFA
+find 68 symble from hash section, symname=_Unwind_GetCFA, result=_Unwind_GetCFA
+find 68 symble from hash section, symname=_Unwind_GetCFA, result=_Unwind_GetCFA
+find 68 symble from hash section, symname=_Unwind_GetCFA, result=_Unwind_GetCFA
+find 68 symble from hash section, symname=_Unwind_GetCFA, result=_Unwind_GetCFA
+find 69 symble from hash section, symname=__gnu_Unwind_RaiseException, result=__gnu_Unwind_RaiseException
+find 69 symble from hash section, symname=__gnu_Unwind_RaiseException, result=__gnu_Unwind_RaiseException
+find 70 symble from hash section, symname=__gnu_Unwind_ForcedUnwind, result=__gnu_Unwind_ForcedUnwind
+find 71 symble from hash section, symname=__gnu_Unwind_Resume, result=__gnu_Unwind_Resume
+find 72 symble from hash section, symname=__gnu_Unwind_Resume_or_Rethrow, result=__gnu_Unwind_Resume_or_Rethrow
+find 72 symble from hash section, symname=__gnu_Unwind_Resume_or_Rethrow, result=__gnu_Unwind_Resume_or_Rethrow
+find 73 symble from hash section, symname=_Unwind_Complete, result=_Unwind_Complete
+find 74 symble from hash section, symname=_Unwind_DeleteException, result=_Unwind_DeleteException
+find 75 symble from hash section, symname=_Unwind_VRS_Get, result=_Unwind_VRS_Get
+find 75 symble from hash section, symname=_Unwind_VRS_Get, result=_Unwind_VRS_Get
+find 76 symble from hash section, symname=_Unwind_VRS_Set, result=_Unwind_VRS_Set
+find 77 symble from hash section, symname=__gnu_Unwind_Backtrace, result=__gnu_Unwind_Backtrace
+find 77 symble from hash section, symname=__gnu_Unwind_Backtrace, result=__gnu_Unwind_Backtrace
+find 77 symble from hash section, symname=__gnu_Unwind_Backtrace, result=__gnu_Unwind_Backtrace
+find 78 symble from hash section, symname=__cxa_begin_cleanup, result=__cxa_begin_cleanup
+find 79 symble from hash section, symname=__cxa_type_match, result=__cxa_type_match
+find 79 symble from hash section, symname=__cxa_type_match, result=__cxa_type_match
+find 80 symble from hash section, symname=__gnu_unwind_execute, result=__gnu_unwind_execute
+find 80 symble from hash section, symname=__gnu_unwind_execute, result=__gnu_unwind_execute
+find 80 symble from hash section, symname=__gnu_unwind_execute, result=__gnu_unwind_execute
+find 80 symble from hash section, symname=__gnu_unwind_execute, result=__gnu_unwind_execute
+find 81 symble from hash section, symname=__cxa_call_unexpected, result=__cxa_call_unexpected
+find 81 symble from hash section, symname=__cxa_call_unexpected, result=__cxa_call_unexpected
+find 82 symble from hash section, symname=_Unwind_VRS_Pop, result=_Unwind_VRS_Pop
+find 82 symble from hash section, symname=_Unwind_VRS_Pop, result=_Unwind_VRS_Pop
+find 83 symble from hash section, symname=__gnu_Unwind_Save_VFP_D, result=__gnu_Unwind_Save_VFP_D
+find 83 symble from hash section, symname=__gnu_Unwind_Save_VFP_D, result=__gnu_Unwind_Save_VFP_D
+find 84 symble from hash section, symname=__gnu_Unwind_Save_VFP, result=__gnu_Unwind_Save_VFP
+find 84 symble from hash section, symname=__gnu_Unwind_Save_VFP, result=__gnu_Unwind_Save_VFP
+find 85 symble from hash section, symname=__gnu_Unwind_Save_VFP_D_16_to_31, result=__gnu_Unwind_Save_VFP_D_16_to_31
+find 85 symble from hash section, symname=__gnu_Unwind_Save_VFP_D_16_to_31, result=__gnu_Unwind_Save_VFP_D_16_to_31
+find 86 symble from hash section, symname=__gnu_Unwind_Save_WMMXD, result=__gnu_Unwind_Save_WMMXD
+find 86 symble from hash section, symname=__gnu_Unwind_Save_WMMXD, result=__gnu_Unwind_Save_WMMXD
+find 86 symble from hash section, symname=__gnu_Unwind_Save_WMMXD, result=__gnu_Unwind_Save_WMMXD
+find 87 symble from hash section, symname=__gnu_Unwind_Save_WMMXC, result=__gnu_Unwind_Save_WMMXC
+find 87 symble from hash section, symname=__gnu_Unwind_Save_WMMXC, result=__gnu_Unwind_Save_WMMXC
+find 87 symble from hash section, symname=__gnu_Unwind_Save_WMMXC, result=__gnu_Unwind_Save_WMMXC
+find 87 symble from hash section, symname=__gnu_Unwind_Save_WMMXC, result=__gnu_Unwind_Save_WMMXC
+find 88 symble from hash section, symname=__restore_core_regs, result=__restore_core_regs
+find 88 symble from hash section, symname=__restore_core_regs, result=__restore_core_regs
+find 88 symble from hash section, symname=__restore_core_regs, result=__restore_core_regs
+find 89 symble from hash section, symname=___Unwind_RaiseException, result=___Unwind_RaiseException
+find 89 symble from hash section, symname=___Unwind_RaiseException, result=___Unwind_RaiseException
+find 89 symble from hash section, symname=___Unwind_RaiseException, result=___Unwind_RaiseException
+find 90 symble from hash section, symname=_Unwind_RaiseException, result=_Unwind_RaiseException
+find 90 symble from hash section, symname=_Unwind_RaiseException, result=_Unwind_RaiseException
+find 90 symble from hash section, symname=_Unwind_RaiseException, result=_Unwind_RaiseException
+find 91 symble from hash section, symname=___Unwind_Resume, result=___Unwind_Resume
+find 91 symble from hash section, symname=___Unwind_Resume, result=___Unwind_Resume
+find 91 symble from hash section, symname=___Unwind_Resume, result=___Unwind_Resume
+find 92 symble from hash section, symname=_Unwind_Resume, result=_Unwind_Resume
+find 92 symble from hash section, symname=_Unwind_Resume, result=_Unwind_Resume
+find 93 symble from hash section, symname=___Unwind_Resume_or_Rethrow, result=___Unwind_Resume_or_Rethrow
+find 94 symble from hash section, symname=_Unwind_Resume_or_Rethrow, result=_Unwind_Resume_or_Rethrow
+find 94 symble from hash section, symname=_Unwind_Resume_or_Rethrow, result=_Unwind_Resume_or_Rethrow
+find 95 symble from hash section, symname=___Unwind_ForcedUnwind, result=___Unwind_ForcedUnwind
+find 96 symble from hash section, symname=_Unwind_ForcedUnwind, result=_Unwind_ForcedUnwind
+find 97 symble from hash section, symname=___Unwind_Backtrace, result=___Unwind_Backtrace
+find 98 symble from hash section, symname=_Unwind_Backtrace, result=_Unwind_Backtrace
+find 99 symble from hash section, symname=__gnu_unwind_frame, result=__gnu_unwind_frame
+find 100 symble from hash section, symname=_Unwind_GetRegionStart, result=_Unwind_GetRegionStart
+find 100 symble from hash section, symname=_Unwind_GetRegionStart, result=_Unwind_GetRegionStart
+find 101 symble from hash section, symname=_Unwind_GetLanguageSpecificData, result=_Unwind_GetLanguageSpecificData
+find 101 symble from hash section, symname=_Unwind_GetLanguageSpecificData, result=_Unwind_GetLanguageSpecificData
+find 102 symble from hash section, symname=_Unwind_GetDataRelBase, result=_Unwind_GetDataRelBase
+find 102 symble from hash section, symname=_Unwind_GetDataRelBase, result=_Unwind_GetDataRelBase
+find 102 symble from hash section, symname=_Unwind_GetDataRelBase, result=_Unwind_GetDataRelBase
+find 103 symble from hash section, symname=_Unwind_GetTextRelBase, result=_Unwind_GetTextRelBase
+find 103 symble from hash section, symname=_Unwind_GetTextRelBase, result=_Unwind_GetTextRelBase
+find 103 symble from hash section, symname=_Unwind_GetTextRelBase, result=_Unwind_GetTextRelBase
+5. print all section
+section 1: name=, type=0x00000000, flag=0x00000000, addr=0x00000000, offset=0x00000000, size=0, align=0
+section 2: name=.note.android.ident, type=0x00000007, flag=0x00000002, addr=0x00000134, offset=0x00000134, size=152, align=4
+section 3: name=.note.gnu.build-id, type=0x00000007, flag=0x00000002, addr=0x000001cc, offset=0x000001cc, size=36, align=4
+section 4: name=.dynsym, type=0x0000000b, flag=0x00000002, addr=0x000001f0, offset=0x000001f0, size=1648, align=4
+section 5: name=.dynstr, type=0x00000003, flag=0x00000002, addr=0x00000860, offset=0x00000860, size=1682, align=1
+section 6: name=.hash, type=0x00000005, flag=0x00000002, addr=0x00000ef4, offset=0x00000ef4, size=808, align=4
+section 7: name=.gnu.version, type=0x6fffffff, flag=0x00000002, addr=0x0000121c, offset=0x0000121c, size=206, align=2
+section 8: name=.gnu.version_d, type=0x6ffffffd, flag=0x00000002, addr=0x000012ec, offset=0x000012ec, size=28, align=4
+section 9: name=.gnu.version_r, type=0x6ffffffe, flag=0x00000002, addr=0x00001308, offset=0x00001308, size=32, align=4
+section 10: name=.rel.dyn, type=0x00000009, flag=0x00000002, addr=0x00001328, offset=0x00001328, size=200, align=4
+section 11: name=.rel.plt, type=0x00000009, flag=0x00000042, addr=0x000013f0, offset=0x000013f0, size=528, align=4
+section 12: name=.plt, type=0x00000001, flag=0x00000006, addr=0x00001600, offset=0x00001600, size=812, align=4
+section 13: name=.text, type=0x00000001, flag=0x00000006, addr=0x0000192c, offset=0x0000192c, size=10488, align=4
+section 14: name=.ARM.extab, type=0x00000001, flag=0x00000002, addr=0x00004224, offset=0x00004224, size=96, align=4
+section 15: name=.ARM.exidx, type=0x70000001, flag=0x00000082, addr=0x00004284, offset=0x00004284, size=360, align=4
+section 16: name=.rodata, type=0x00000001, flag=0x00000032, addr=0x000043ec, offset=0x000043ec, size=98, align=1
+section 17: name=.fini_array, type=0x0000000f, flag=0x00000003, addr=0x00005d60, offset=0x00004d60, size=8, align=4
+section 18: name=.data.rel.ro, type=0x00000001, flag=0x00000003, addr=0x00005d68, offset=0x00004d68, size=48, align=4
+section 19: name=.init_array, type=0x0000000e, flag=0x00000003, addr=0x00005d98, offset=0x00004d98, size=4, align=1
+section 20: name=.dynamic, type=0x00000006, flag=0x00000003, addr=0x00005d9c, offset=0x00004d9c, size=288, align=4
+section 21: name=.got, type=0x00000001, flag=0x00000003, addr=0x00005ebc, offset=0x00004ebc, size=324, align=4
+section 22: name=.data, type=0x00000001, flag=0x00000003, addr=0x00006000, offset=0x00005000, size=4, align=4
+section 23: name=.bss, type=0x00000008, flag=0x00000003, addr=0x00006004, offset=0x00005004, size=135180, align=4
+section 24: name=.comment, type=0x00000001, flag=0x00000030, addr=0x00000000, offset=0x00005004, size=101, align=1
+section 25: name=.note.gnu.gold-version, type=0x00000007, flag=0x00000000, addr=0x00000000, offset=0x0000506c, size=28, align=4
+section 26: name=.ARM.attributes, type=0x70000003, flag=0x00000000, addr=0x00000000, offset=0x00005088, size=59, align=1
+section 27: name=.shstrtab, type=0x00000003, flag=0x00000000, addr=0x00000000, offset=0x000050c3, size=279, align=1
+-------------------- parse section end -------------------
+
+-------------------- parse segment -------------------
+1. find dynamic segment
+segment 4: type=0x2, offset=0x00004d9c, vaddr=0x00005d9c, filesz=288, memsz=288, align=4
+	dyn num=36
+	dyn 1: tag=DT_PLTGOT, ptr=0x00005eec
+	dyn 2: tag=DT_PLTRELSZ, val=528
+	dyn 3: tag=DT_JMPREL, ptr=0x000013f0
+	dyn 4: tag=DT_PLTREL, val=17
+	dyn 5: tag=DT_REL, ptr=0x00001328
+	dyn 6: tag=DT_RELSZ, val=200
+	dyn 7: tag=DT_RELENT, val=8
+	dyn 8: tag=DT_RELCOUNT, val=11
+	dyn 9: tag=DT_SYMTAB, ptr=0x000001f0
+	dyn 10: tag=DT_SYMENT, val=16
+	dyn 11: tag=DT_STRTAB, ptr=0x00000860
+	dyn 12: tag=DT_STRSZ, val=1682
+	dyn 13: tag=DT_HASH, ptr=0x00000ef4
+	dyn 14: tag=DT_NEEDED, val=liblog.so
+	dyn 15: tag=DT_NEEDED, val=libc.so
+	dyn 16: tag=DT_NEEDED, val=libm.so
+	dyn 17: tag=DT_NEEDED, val=libstdc++.so
+	dyn 18: tag=DT_NEEDED, val=libdl.so
+	dyn 19: tag=DT_SONAME, val=libhooktest.so
+	dyn 20: tag=DT_FINI_ARRAY, ptr=0x00005d60
+	dyn 21: tag=DT_FINI_ARRAYSZ, val=8
+	dyn 22: tag=DT_INIT_ARRAY, ptr=0x00005d98
+	dyn 23: tag=DT_INIT_ARRAYSZ, val=4
+	dyn 24: tag=0x0000001e
+	dyn 25: tag=0x6ffffffb
+	dyn 26: tag=0x6ffffff0
+	dyn 27: tag=0x6ffffffc
+	dyn 28: tag=0x6ffffffd
+	dyn 29: tag=0x6ffffffe
+	dyn 30: tag=0x6fffffff
+2. find loadable segment
+segment 2: type=0x1, offset=0x00000000, vaddr=0x00000000, filesz=17486, memsz=17486, align=4096
+segment 3: type=0x1, offset=0x00004d60, vaddr=0x00005d60, filesz=676, memsz=135856, align=4096
