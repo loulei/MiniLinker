@@ -12,7 +12,7 @@
 #include <stdlib.h>
 #include "Parser.h"
 
-#define ELF_FILE_PATH "file/libhooktest.so"
+#define ELF_FILE_PATH "file/libdata.so"
 
 int main(void) {
 	parseElf(ELF_FILE_PATH);

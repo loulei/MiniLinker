@@ -4,14 +4,17 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../src/Loader.c \
 ../src/MiniLinker.c \
 ../src/Parser.c 
 
 OBJS += \
+./src/Loader.o \
 ./src/MiniLinker.o \
 ./src/Parser.o 
 
 C_DEPS += \
+./src/Loader.d \
 ./src/MiniLinker.d \
 ./src/Parser.d 
 
