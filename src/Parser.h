@@ -12,6 +12,7 @@
 #include <stdlib.h>
 #include <elf.h>
 #include <string.h>
+#include "common.h"
 
 void parseElf(char *filename);
 
