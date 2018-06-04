@@ -6,17 +6,20 @@
 C_SRCS += \
 ../src/Loader.c \
 ../src/MiniLinker.c \
-../src/Parser.c 
+../src/Parser.c \
+../src/mini_linker_phdr.c 
 
 OBJS += \
 ./src/Loader.o \
 ./src/MiniLinker.o \
-./src/Parser.o 
+./src/Parser.o \
+./src/mini_linker_phdr.o 
 
 C_DEPS += \
 ./src/Loader.d \
 ./src/MiniLinker.d \
-./src/Parser.d 
+./src/Parser.d \
+./src/mini_linker_phdr.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

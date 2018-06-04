@@ -18,6 +18,9 @@
 int main(void) {
 	parseElf(ELF_FILE_PATH);
 
+	LOGD("\nstart load lib %s\n", ELF_FILE_PATH);
+	soinfo *si = do_dlopen(ELF_FILE_PATH, RTLD_NOW);
+	LOGD("%s map to : %p", ELF_FILE_PATH, si);
 
 	return EXIT_SUCCESS;
 }

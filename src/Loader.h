@@ -9,14 +9,21 @@
 #define LOADER_H_
 
 #include <unistd.h>
+#include <sys/stat.h>
 #include <sys/types.h>
 #include <elf.h>
 #include <stdbool.h>
 #include <dlfcn.h>
 #include <sys/mman.h>
+#include <stdio.h>
+#include <fcntl.h>
+#include <stdlib.h>
+#include <asm-generic/fcntl.h>
 #include "common.h"
 
+#define FLAG_LINKED     0x00000001
 
+#define __libc_format_buffer(b, s, f, p...) sprintf(b, f, p);
 
 #define PAGE_SHIFT 12
 #define PAGE_SIZE (1UL << PAGE_SHIFT)
@@ -109,13 +116,31 @@ struct _soinfo{
 	bool has_text_relocations;
 	bool has_DT_SYMBOLIC;
 
-	void CallConstructors();
-	void CallDestructors();
-	void CallPreInitConstructors();
 
-	void CallArray(const char* array_name, linker_function_t* functions, size_t count, bool reverse);
-	void CallFunction(const char* function_name, linker_function_t function);
 };
+
+bool constructors_called;
+
+void CallConstructors();
+void CallDestructors();
+void CallPreInitConstructors();
+
+void CallArray(const char* array_name, linker_function_t* functions, size_t count, bool reverse);
+void CallFunction(const char* function_name, linker_function_t function);
+
+
+static soinfo *find_loaded_library(const char *name);
+static int open_library(const char *name);
+static bool ensure_free_list_non_empty();
+static soinfo *soinfo_alloc(const char *name);
+static soinfo* load_library(const char *name);
+static unsigned elfhash(const char* _name);
+static Elf32_Sym * soinfo_elf_lookup(soinfo *si, unsigned hash, const char *name);
+static void set_soinfo_pool_protection(int protection);
+static soinfo* find_library(const char *name);
+static soinfo* find_library_internal(const char *name);
+soinfo *do_dlopen(const char *name, int flags);
+
 
 extern soinfo libdl_info;
 
